@@ -1,0 +1,13 @@
+/* Table of Contents:
+	1.0:- Default styles
+*/
+
+/* 1.0:- Default Styles */
+
+/* Default/Base styles for the page; generally element selectors w/o classes/ids */
+
+body {
+	background-color: #fff;
+	color: #000;
+	font-family: Palatino, "Times New Roman", Times, serif;
+}
