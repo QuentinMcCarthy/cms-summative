@@ -11,3 +11,15 @@ body {
 	color: #000;
 	font-family: Palatino, "Times New Roman", Times, serif;
 }
+
+.navbar-brand {
+	width: 15%;
+	height: 40px;
+}
+
+.navbar-brand-image {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100%;
+}

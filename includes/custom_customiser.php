@@ -4,12 +4,14 @@
 			1.1:- Header Styles Section
 			1.2:- Header Background
 			1.3:- Header Text
-			1.4:- Carousel Section
-			1.5:- Carousel Height
+			1.4:- Header Logo
+			1.5:- Carousel Section
+			1.6:- Carousel Height
 		2.0:- Customizer Styles
 			2.1:- Header Background Styles
 			2.2:- Header Text Styles
-			2.3:- Carousel Height Styles
+			3.3:- Header Logo Styles
+			2.4:- Carousel Height Styles
 	*/
 
 
@@ -62,7 +64,26 @@
 		$wp_customize->add_control( $header_text_colour_control );
 
 
-		// 1.4:- Carousel Section
+		// 1.4:- Header Logo
+		$header_logo_setting_args = array(
+			'default'   => get_template_directory_uri().'/assets/images/default-header-logo.png',
+			'transport' => 'refresh',
+		);
+
+		$wp_customize->add_setting( 'header_logo_setting', $header_logo_setting_args );
+
+		$header_logo_control_args = array(
+			'label'    => __( 'Header Logo', 'cliveschemist' ),
+			'section'  => 'custom_theme_header_info',
+			'settings' => 'header_logo_setting',
+		);
+
+		$header_logo_control = new WP_Customize_Image_Control( $wp_customize, 'header_logo_control', $header_logo_control_args );
+
+		$wp_customize->add_control( $header_logo_control );
+
+
+		// 1.5:- Carousel Section
 		$carousel_styles_section_args = array(
 			'title'    => __( 'Carousel Options', 'cliveschemist' ),
 			'priority' => 21,
@@ -71,7 +92,7 @@
 		$wp_customize->add_section( 'custom_theme_carousel_info', $carousel_styles_section_args );
 
 
-		// 1.5:- Carousel Height
+		// 1.6:- Carousel Height
 		$carousel_height_setting_args = array(
 			'default'   => '50',
 			'transport' => 'refresh',
@@ -124,10 +145,16 @@
 				opacity: 0.9;
 			}
 
-			/* Carousel Height Styles */
+			/* 2.3:- Header Logo Styles */
+			.navbar-brand-image {
+				background-image: url(<?php echo get_theme_mod( 'header_logo_setting', get_template_directory_uri().'/assets/images/default-header-logo.png' ); ?>)
+			}
+
+			/* 2.4:- Carousel Height Styles */
 			.carousel-image {
 				padding-top: <?php echo get_theme_mod( 'carousel_height_setting', '50' ).'%'; ?> !important;
 			}
+
 		</style>
 		<?php
 	}
