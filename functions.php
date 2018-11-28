@@ -119,6 +119,18 @@
 	// 4.0:- Sidebars
 	add_action( 'widgets_init', function() {
 		register_sidebar(array(
+			'id'            => 'sidebar-left',
+			'name'          => __( 'Left Sidebar', 'theme-slug' ),
+			'description'   => __( 'Left sidebar appears on the left side of all pages', 'theme-slug' ),
+			'before_widget' => '<div id="%1$s" class="custom-widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		));
+	});
+
+	add_action( 'widgets_init', function() {
+		register_sidebar(array(
 			'id'            => 'sidebar-right',
 			'name'          => __( 'Right Sidebar', 'theme-slug' ),
 			'description'   => __( 'Right sidebar appears on the right side of all pages', 'theme-slug' ),

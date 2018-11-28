@@ -28,6 +28,13 @@ h5 {
 
 /* Global styles, apply to more than one element or page */
 
+.post-image {
+	width: 100%;
+	padding-top: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
 
 
 /* 3:0:- Navbar */
