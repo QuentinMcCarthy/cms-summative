@@ -7,11 +7,14 @@
 			1.4:- Header Logo
 			1.5:- Carousel Section
 			1.6:- Carousel Height
+			1.7:- Sidebar Section
+			1.8:- Sidebar Background
 		2.0:- Customizer Styles
 			2.1:- Header Background Styles
 			2.2:- Header Text Styles
 			3.3:- Header Logo Styles
 			2.4:- Carousel Height Styles
+			2.5:- Sidebar Background Styles
 	*/
 
 
@@ -117,6 +120,34 @@
 		$carousel_height_control = new WP_Customize_Control( $wp_customize, 'carousel_height_control', $carousel_height_control_args );
 
 		$wp_customize->add_control( $carousel_height_control );
+
+
+		// 1.7:- Sidebar Section
+		$sidebar_styles_section_args = array(
+			'title'    => __( 'Sidebar Options', 'cliveschemist' ),
+			'priority' => 22,
+		);
+
+		$wp_customize->add_section( 'custom_theme_sidebar_info', $sidebar_styles_section_args );
+
+
+		// 1.8:- Sidebar Background
+		$sidebar_background_colour_setting_args = array(
+			'default'   => '#afafaf',
+			'transport' => 'refresh',
+		);
+
+		$wp_customize->add_setting( 'sidebar_background_colour_setting', $sidebar_background_colour_setting_args );
+
+		$sidebar_background_colour_control_args = array(
+			'label'    => __( 'Sidebar Background Colour', 'cliveschemist' ),
+			'section'  => 'custom_theme_sidebar_info',
+			'settings' => 'sidebar_background_colour_setting',
+		);
+
+		$sidebar_background_colour_control = new WP_Customize_Color_Control( $wp_customize, 'sidebar_background_colour_control', $sidebar_background_colour_control_args );
+
+		$wp_customize->add_control( $sidebar_background_colour_control );
 	}
 
 	add_action( 'customize_register', 'custom_theme_customizer' );
@@ -130,6 +161,7 @@
 			.header-bg {
 				background-color: <?php echo get_theme_mod( 'header_background_colour_setting', '#343a40' ); ?> !important;
 			}
+
 
 			/* 2.2:- Header Text Styles */
 			.navbar-dark .navbar-nav .nav-link {
@@ -145,10 +177,12 @@
 				opacity: 0.9;
 			}
 
+
 			/* 2.3:- Header Logo Styles */
 			.navbar-brand-image {
 				background-image: url(<?php echo get_theme_mod( 'header_logo_setting', get_template_directory_uri().'/assets/images/default-header-logo.png' ); ?>)
 			}
+
 
 			/* 2.4:- Carousel Height Styles */
 			.carousel-image {
@@ -159,6 +193,12 @@
 				background-size: contain;
 			}
 
+
+			/* 2.5:- Sidebar Background Styles */
+			#sidebar-left,
+			#sidebar-right {
+				background-color: <?php echo get_theme_mod( 'sidebar_background_colour_setting', '#afafaf' ); ?> !important;
+			}
 		</style>
 		<?php
 	}
