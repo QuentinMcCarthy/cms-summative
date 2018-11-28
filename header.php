@@ -26,3 +26,5 @@
 				?>
 			</nav>
 		<?php endif; ?>
+
+		<div class="container-fluid">
