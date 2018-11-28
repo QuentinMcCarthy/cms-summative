@@ -1,5 +1,7 @@
 /* Table of Contents:
 	1.0:- Default styles
+	2.0:- Global styles
+	3.0:- Navbar
 */
 
 /* 1.0:- Default Styles */
@@ -12,6 +14,20 @@ body {
 	font-family: Palatino, "Times New Roman", Times, serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+
+/* 2.0:- Global styles */
+
+
+
+/* 3:0:- Navbar */
 .navbar-brand {
 	width: 15%;
 	height: 40px;
