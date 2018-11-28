@@ -153,6 +153,10 @@
 			/* 2.4:- Carousel Height Styles */
 			.carousel-image {
 				padding-top: <?php echo get_theme_mod( 'carousel_height_setting', '50' ).'%'; ?> !important;
+				width: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
 			}
 
 		</style>
