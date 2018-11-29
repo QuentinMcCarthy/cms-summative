@@ -12,7 +12,7 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#default-nav-container" aria-controls="default-nav-container" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<a class="navbar-brand" href="#"><div class="navbar-brand-image"></div></a>
+				<a class="navbar-brand" href="<?php get_home_url(); ?>"><div class="navbar-brand-image"></div></a>
 				<?php
 					wp_nav_menu(array(
 						'theme_location'  => 'defaultnav',
@@ -26,5 +26,3 @@
 				?>
 			</nav>
 		<?php endif; ?>
-
-		<div class="container-fluid">
