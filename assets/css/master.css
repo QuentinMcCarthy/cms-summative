@@ -10,8 +10,8 @@
 /* Default/Base styles for the page; generally element selectors w/o classes/ids */
 
 body {
-	background-color: #fff;
-	color: #000;
+	background-color: #ffffff;
+	color: #000000;
 	font-family: Palatino, "Times New Roman", Times, serif;
 }
 
@@ -27,6 +27,14 @@ h5 {
 /* 2.0:- Global styles */
 
 /* Global styles, apply to more than one element or page */
+
+#single-post-image {
+	width: 25%;
+	padding-top: 25%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
 
 .post-image {
 	width: 100%;
