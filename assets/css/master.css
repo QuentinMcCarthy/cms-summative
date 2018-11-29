@@ -10,9 +10,19 @@
 /* Default/Base styles for the page; generally element selectors w/o classes/ids */
 
 body {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 	background-color: #ffffff;
 	color: #000000;
 	font-family: Palatino, "Times New Roman", Times, serif;
+}
+body.admin-bar {
+	height: calc(100vh - 32px);
+}
+body > * {
+	/* Prevent elements shrinking due to flex */
+	flex-shrink: 0;
 }
 
 h1,
@@ -27,6 +37,10 @@ h5 {
 /* 2.0:- Global styles */
 
 /* Global styles, apply to more than one element or page */
+
+[class*="container"] {
+	flex: 1 0 auto;
+}
 
 #single-post-image {
 	width: 25%;
