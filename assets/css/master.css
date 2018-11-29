@@ -17,9 +17,11 @@ body {
 	color: #000000;
 	font-family: Palatino, "Times New Roman", Times, serif;
 }
+
 body.admin-bar {
-	height: calc(100vh - 32px);
+	height: calc( 100vh - 32px );
 }
+
 body > * {
 	/* Prevent elements shrinking due to flex */
 	flex-shrink: 0;
