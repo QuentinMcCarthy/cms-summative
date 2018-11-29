@@ -9,7 +9,7 @@
 			3.3:- Custom Background
 			3.4:- Post Thumbnails
 			3.5:- Post Formats
-		4.0:- Sidebars
+		4.0:- Widget Menus
 	*/
 
 
@@ -26,7 +26,7 @@
 
 		// Stylesheets
 		wp_enqueue_style( 'bootstrap', $css_directory.'bootstrap.min.css', array(), '4.1.3', 'all' );
-		wp_enqueue_style( 'master', $css_directory.'master.css', array(), '0.0.3', 'all' );
+		wp_enqueue_style( 'master', $css_directory.'master.css', array(), '0.0.4', 'all' );
 
 		// Scripts
 		wp_enqueue_script( 'jquery' );
@@ -116,25 +116,33 @@
 	add_action( 'init', 'custom_theme_init' );
 
 
-	// 4.0:- Sidebars
+	// 4.0:- Widget Menus
 	add_action( 'widgets_init', function() {
 		register_sidebar(array(
 			'id'            => 'sidebar-left',
 			'name'          => __( 'Left Sidebar', 'theme-slug' ),
 			'description'   => __( 'Left sidebar appears on the left side of all pages', 'theme-slug' ),
-			'before_widget' => '<div id="%1$s" class="custom-widget p-2 border-bottom border-dark %2$s">',
+			'before_widget' => '<div id="%1$s" class="sidebar-widget p-2 border-bottom border-dark %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		));
-	});
 
-	add_action( 'widgets_init', function() {
 		register_sidebar(array(
 			'id'            => 'sidebar-right',
 			'name'          => __( 'Right Sidebar', 'theme-slug' ),
 			'description'   => __( 'Right sidebar appears on the right side of all pages', 'theme-slug' ),
-			'before_widget' => '<div id="%1$s" class="custom-widget p-2 border-bottom border-dark  %2$s">',
+			'before_widget' => '<div id="%1$s" class="sidebar-widget p-2 border-bottom border-dark  %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		));
+
+		register_sidebar(array(
+			'id'            => 'main-footer',
+			'name'          => __( 'Main Footer', 'theme-slug' ),
+			'description'   => __( 'Main footer appears at the bottom of all pages', 'theme-slug' ),
+			'before_widget' => '<div id="%1$s" class="footer-widget p-2 %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
