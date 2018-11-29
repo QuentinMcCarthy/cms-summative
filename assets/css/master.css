@@ -19,6 +19,7 @@ body {
 }
 
 body.admin-bar {
+	/* Height calculated for full view height, minus the height of the admin bar */
 	height: calc( 100vh - 32px );
 }
 
@@ -40,7 +41,8 @@ h5 {
 
 /* Global styles, apply to more than one element or page */
 
-[class*="container"] {
+/* Select any top-level container class */
+body > [class*="container"] {
 	flex: 1 0 auto;
 }
 
