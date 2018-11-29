@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header( 'front' ); ?>
 	<div class="row">
 		<div class="col">
 			<div class="row">
@@ -11,9 +11,7 @@
 				<?php endif; ?>
 
 				<div class="col">
-					<?php if ( have_posts() ): ?>
-						<?php get_template_part( 'carousel', 'Carousel' ); ?>
-					<?php endif; ?>
+
 				</div>
 
 				<?php if ( is_active_sidebar( 'sidebar-right' ) ): ?>
