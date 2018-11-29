@@ -4,7 +4,7 @@
 			<div class="col">
 				<div class="row">
 					<?php if ( is_active_sidebar( 'sidebar-left' ) ): ?>
-						<div class="col-4">
+						<div class="col-4 px-0">
 							<div id="sidebar-left">
 								<?php dynamic_sidebar( 'sidebar-left' ); ?>
 							</div>
