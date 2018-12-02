@@ -10,7 +10,8 @@
 			2.2:- Carousel Styles
 		3.0:- Sidebar
 			3.1:- Sidebar Background
-			3.2:- Sidebar Styles
+			3.2:- Sidebar Text
+			3.3:- Sidebar Styles
 		4.0:- Footer
 			4.1:- Footer Background
 			4.2:- Footer Text
@@ -137,6 +138,25 @@
 		$wp_customize->add_control( $sidebar_bg_color_control );
 
 
+		// 3.2:- Sidebar Text
+		$sidebar_text_color_setting_args = array(
+			'default'   => '#000000',
+			'transport' => 'refresh',
+		);
+
+		$wp_customize->add_setting( 'sidebar_text_color_settings', $sidebar_text_color_setting_args );
+
+		$sidebar_text_color_control_args = array(
+			'label'    => __( 'Sidebar Text Colour', 'cliveschemist' ),
+			'section'  => 'colors',
+			'settings' => 'sidebar_text_color_settings',
+		);
+
+		$sidebar_text_color_control = new WP_Customize_Color_Control( $wp_customize, 'sidebar_text_color_control', $sidebar_text_color_control_args );
+
+		$wp_customize->add_control( $sidebar_text_color_control );
+
+
 		// 4.0:- Footer
 
 		// 4.1:- Footer Background
@@ -215,10 +235,11 @@
 			}
 
 
-			/* 3.2:- Sidebar Styles */
+			/* 3.3:- Sidebar Styles */
 			#sidebar-left,
 			#sidebar-right {
 				background-color: <?php echo get_theme_mod( 'sidebar_bg_color_settings', '#afafaf' ); ?> !important;
+				color: <?php echo get_theme_mod( 'sidebar_text_color_settings', '#000000' ); ?> !important;
 			}
 
 
