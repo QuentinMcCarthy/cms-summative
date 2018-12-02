@@ -17,8 +17,7 @@
 
 									<div class="col">
 										<h2><?php the_title(); ?></h2>
-										<?php the_excerpt(); ?>
-										<a class="btn btn-primary" href="<?php echo esc_url( get_permalink() ); ?>">Read More</a>
+										<?php the_content(); ?>
 									</div>
 								</div>
 							<?php endwhile; ?>
