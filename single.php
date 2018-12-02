@@ -9,13 +9,18 @@
 						<?php if ( have_posts() ): ?>
 							<?php while ( have_posts() ): the_post(); ?>
 								<div class="row p-1">
-									<div class="col">
+									<div id="single-post" class="col">
 										<?php if ( has_post_thumbnail() ): ?>
 											<div id="single-post-image" class="d-inline-block mr-2 float-left" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
 										<?php endif; ?>
 
-										<h2><?php the_title(); ?></h2>
-										<?php the_content(); ?>
+										<?php if ( strlen( get_the_title() ) > 0): ?>
+											<h2><?php the_title(); ?></h2>
+										<?php endif; ?>
+
+										<div id="single-post-content" class="pt-3 border-top border-dark">
+											<?php the_content(); ?>
+										</div>
 									</div>
 								</div>
 							<?php endwhile; ?>

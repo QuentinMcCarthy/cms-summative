@@ -3,6 +3,7 @@
 	2.0:- Global styles
 	3.0:- Navbar
 	4.0:- Carousel
+	5.0:- Single Post Styles
 */
 
 /* 1.0:- Default Styles */
@@ -91,4 +92,61 @@ body > [class*="container"] {
 #main-carousel {
 	height: fit-content;
 	overflow: hidden;
+}
+
+/* 5.0:- Single Post Styles */
+
+/* Styles relating to the single.php and singular posts in general */
+
+#single-post-content form {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+#single-post-content form input {
+	/* Bootstrap styles for .form-control */
+	display: block;
+	width: 100%;
+	height: calc(2.25rem + 2px);
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #ffffff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out,
+				box-shadow .15s ease-in-out;
+	overflow: visible;
+	margin: 0;
+	font-family: inherit;
+}
+
+#single-post-content form input[type=checkbox],
+#single-post-content form input[type=radio] {
+	display: initial;
+	width: initial;
+	height: initial;
+	/* Bootstrap styles for input */
+	box-sizing: border-box;
+	padding: 0;
+}
+
+#single-post-content form input[type=file],
+#single-post-content form input[type=range] {
+	/* Bootstrap styles for input */
+	display: block;
+	width: 100%;
+	height: initial;
+}
+
+#single-post-content form input[type=reset] {
+	/* Bootstrap styles for input using .btn-secondary */
+}
+
+#single-post-content form select[multiple],
+#single-post-content form select[size] {
+	/* Bootstrap styles for select */
+	height: auto;
 }

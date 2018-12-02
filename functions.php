@@ -26,7 +26,7 @@
 
 		// Stylesheets
 		wp_enqueue_style( 'bootstrap', $css_directory.'bootstrap.min.css', array(), '4.1.3', 'all' );
-		wp_enqueue_style( 'master', $css_directory.'master.css', array(), '0.0.5', 'all' );
+		wp_enqueue_style( 'master', $css_directory.'master.css', array(), '0.0.6', 'all' );
 
 		// Scripts
 		wp_enqueue_script( 'jquery' );
