@@ -29,7 +29,7 @@
 		<div class="row mx-0">
 			<div class="col px-0">
 				<?php if ( have_posts() ): ?>
-					<?php get_template_part( 'carousel', 'Carousel' ); ?>
+					<?php get_template_part( 'template-carousel', 'Carousel' ); ?>
 				<?php endif; ?>
 			</div>
 		</div>
