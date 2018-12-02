@@ -226,7 +226,7 @@
 		?>
 		<style type="text/css">
 			/* 1.2:- Globals Styles */
-			a {
+			a:not(.ab-item):not(.btn) {
 				color: <?php echo get_theme_mod( 'link_text_color_setting', '#007bff' ); ?> !important;
 			}
 
