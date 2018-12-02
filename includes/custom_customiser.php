@@ -69,7 +69,7 @@
 
 		// 1.4:- Header Logo
 		$header_logo_setting_args = array(
-			'default'   => get_template_directory_uri().'/assets/images/default-header-logo.png',
+			'default'   => get_template_directory_uri().'/assets/img/default-header-logo.png',
 			'transport' => 'refresh',
 		);
 
@@ -180,7 +180,7 @@
 
 			/* 2.3:- Header Logo Styles */
 			.navbar-brand-image {
-				background-image: url(<?php echo get_theme_mod( 'header_logo_setting', get_template_directory_uri().'/assets/images/default-header-logo.png' ); ?>)
+				background-image: url(<?php echo get_theme_mod( 'header_logo_setting', get_template_directory_uri().'/assets/img/default-header-logo.png' ); ?>)
 			}
 
 
