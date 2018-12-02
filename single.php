@@ -3,13 +3,7 @@
 		<div class="row">
 			<div class="col">
 				<div class="row">
-					<?php if ( is_active_sidebar( 'sidebar-left' ) ): ?>
-						<div class="col-4 px-0">
-							<div id="sidebar-left">
-								<?php dynamic_sidebar( 'sidebar-left' ); ?>
-							</div>
-						</div>
-					<?php endif; ?>
+					<?php get_template_part( 'sidebar-left', 'Left Sidebar' ); ?>
 
 					<div class="col">
 						<?php if ( have_posts() ): ?>
@@ -28,13 +22,7 @@
 						<?php endif; ?>
 					</div>
 
-					<?php if ( is_active_sidebar( 'sidebar-right' ) ): ?>
-						<div class="col-4 px-0">
-							<div id="sidebar-right">
-								<?php dynamic_sidebar( 'sidebar-right' ); ?>
-							</div>
-						</div>
-					<?php endif; ?>
+					<?php get_template_part( 'sidebar-right', 'Right Sidebar' ); ?>
 				</div>
 			</div>
 		</div>
