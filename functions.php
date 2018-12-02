@@ -42,7 +42,8 @@
 	// 3.0:- Init
 	function custom_theme_init() {
 		// 3.1:- Menus
-		register_nav_menu( 'defaultnav', __( 'Default Navigation' ) );
+		register_nav_menu( 'topnav', __( 'Navbar above Carousel' ) );
+		register_nav_menu( 'middlenav', __( 'Navbar below Carousel' ) );
 
 		// 3.2:- Custom Post Types
 

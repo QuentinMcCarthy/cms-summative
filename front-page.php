@@ -1,12 +1,4 @@
-<?php get_header(); ?>
-	<div class="row mx-0">
-		<div class="col px-0">
-			<?php if ( have_posts() ): ?>
-				<?php get_template_part( 'carousel', 'Carousel' ); ?>
-			<?php endif; ?>
-		</div>
-	</div>
-
+<?php get_header( 'front' ); ?>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">

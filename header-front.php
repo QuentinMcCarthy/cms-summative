@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -26,6 +25,14 @@
 				?>
 			</nav>
 		<?php endif; ?>
+
+		<div class="row mx-0">
+			<div class="col px-0">
+				<?php if ( have_posts() ): ?>
+					<?php get_template_part( 'carousel', 'Carousel' ); ?>
+				<?php endif; ?>
+			</div>
+		</div>
 
 		<?php if ( has_nav_menu( 'middlenav' ) ): ?>
 			<nav class="navbar navbar-expand-lg navbar-dark header-bg">
