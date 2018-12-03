@@ -31,11 +31,7 @@
 		// Scripts
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'bootstrapjs', $js_directory.'bootstrap.min.js', array(), '4.1.3', true );
-		wp_enqueue_script( 'theme-scripts', $js_directory.'theme-scripts.js', array(), '0.0.2', true );
-	});
-
-	add_action( 'admin_enqueue_scripts', function(){
-		wp_enqueue_style( 'admin-style', get_template_directory_uri().'/assets/css/admin.css', array(), '0.0.1', 'all' );
+		wp_enqueue_script( 'theme-scripts', $js_directory.'theme-scripts.js', array(), '0.0.3', true );
 	});
 
 
