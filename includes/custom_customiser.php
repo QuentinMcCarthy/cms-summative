@@ -249,7 +249,7 @@
 			}
 
 			.navbar-brand-image {
-				background-image: url(<?php echo get_theme_mod( 'header_logo_setting', $img_path.'/default-header-logo.png' ); ?>) !important;
+				background-image: url(<?php echo esc_url( get_theme_mod( 'header_logo_setting', $img_path.'/default-header-logo.png' ) ); ?>) !important;
 			}
 
 

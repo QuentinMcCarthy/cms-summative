@@ -11,7 +11,7 @@
 								<div class="row p-1 border-bottom border-dark">
 									<?php if ( has_post_thumbnail() ): ?>
 										<div class="col-2">
-											<div class="post-image" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
+											<div class="post-image" style="background-image: url('<?php esc_url( the_post_thumbnail_url() ); ?>')"></div>
 										</div>
 									<?php endif; ?>
 

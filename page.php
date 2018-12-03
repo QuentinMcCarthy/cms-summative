@@ -11,7 +11,7 @@
 								<div class="row p-1 border-bottom border-dark">
 									<div class="col">
 										<?php if ( has_post_thumbnail() ): ?>
-											<div id="single-post-image" class="d-inline-block mr-2 float-left" style="background-image: url('<?php the_post_thumbnail_url(); ?>'); background-color: #<?php echo get_background_color(); ?>;"></div>
+											<div id="single-post-image" class="d-inline-block mr-2 float-left" style="background-image: url('<?php esc_url( the_post_thumbnail_url() ); ?>'); background-color: #<?php echo get_background_color(); ?>;"></div>
 										<?php endif; ?>
 
 										<h2><?php the_title(); ?></h2>

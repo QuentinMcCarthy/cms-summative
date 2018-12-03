@@ -45,7 +45,7 @@
 
 				<?php if ( has_post_thumbnail() ): ?>
 					<div class="<?php echo $class; ?>">
-						<div class="carousel-image" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
+						<div class="carousel-image" style="background-image: url('<?php esc_url( the_post_thumbnail_url() ); ?>')"></div>
 					</div>
 
 					<?php $iterator++; ?>
