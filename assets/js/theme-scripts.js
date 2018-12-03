@@ -30,8 +30,7 @@ $(document).ready(function(){
 			.end()
 		.find("input[type=submit]")
 			.addClass("btn btn-primary")
-			.end()
-		.end()
+			.end();
 
 	$("#single-post-content table").addClass("table");
 });
