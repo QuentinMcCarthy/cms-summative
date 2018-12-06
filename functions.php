@@ -18,6 +18,8 @@
 
 	require get_parent_theme_file_path( './includes/custom_customiser.php' );
 
+	require get_parent_theme_file_path( './includes/educational_alert.php' );
+
 
 	// 2.0:- Stylesheets and Scripts
 	add_action( 'wp_enqueue_scripts', function() {
