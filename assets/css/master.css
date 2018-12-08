@@ -67,6 +67,11 @@ body > [class*="container"] {
 	border-right: 0.5px solid #000000;
 }
 
+.carousel-control-prev,
+.carousel-control-next {
+	background-color: #555555;
+}
+
 
 /* 3:0:- Navbar */
 
