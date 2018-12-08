@@ -9,6 +9,11 @@
 
 /* Default/Base styles for the page; generally element selectors w/o classes/ids */
 
+html {
+	/* Override Wordpress overflow */
+	overflow: hidden !important;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -16,6 +21,8 @@ body {
 	background-color: #ffffff;
 	color: #000000;
 	font-family: Palatino, "Times New Roman", Times, serif;
+	/* Override Wordpress overflow */
+	overflow-x: hidden !important;
 }
 
 body.admin-bar {
