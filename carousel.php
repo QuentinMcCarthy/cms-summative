@@ -1,6 +1,4 @@
 <?php
-	/* Template Name: Carousel */
-
 	$args = array(
 		'post_type'      => 'carousel',
 		'order'          => 'ASC',
