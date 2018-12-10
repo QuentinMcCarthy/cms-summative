@@ -10,7 +10,7 @@
 							<?php while ( have_posts() ): the_post(); ?>
 								<div class="row p-1 border-bottom border-dark">
 									<?php if ( has_post_thumbnail() ): ?>
-										<div class="col-2">
+										<div class="col-4 col-sm-3 col-md-4 col-lg-3">
 											<div class="post-image" style="background-image: url('<?php esc_url( the_post_thumbnail_url() ); ?>')"></div>
 										</div>
 									<?php endif; ?>
