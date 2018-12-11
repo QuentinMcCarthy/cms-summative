@@ -11,7 +11,6 @@
 		3.0:- Carousel
 			3.1:- Carousel Height
 			3.2:- Carousel Styles
-			3.3:- Responsive Breakpoints
 		4.0:- Sidebar
 			4.1:- Sidebar Background
 			4.2:- Sidebar Text
@@ -256,7 +255,7 @@
 
 			/* 3.2:- Carousel Styles */
 			.carousel-image {
-				padding-top: calc(<?php echo get_theme_mod( 'carousel_height_setting', '25' ).'%' ?> + 10%) !important;
+				padding-top: <?php echo get_theme_mod( 'carousel_height_setting', '25' ).'%'; ?> !important;
 				width: 100%;
 				background-repeat: no-repeat;
 				background-position: center;
@@ -276,23 +275,6 @@
 			#main-footer {
 				background-color: <?php echo get_theme_mod( 'footer_bg_color_setting', '#ffffff' ); ?> !important;
 				color: <?php echo get_theme_mod( 'footer_text_color_setting', '#000000' ); ?> !important;
-			}
-
-
-			/* Small devices (landscape phones, 576px and up) */
-			@media (min-width: 576px) {
-				/* 3.3:- Responsive Breakpoints */
-				.carousel-image {
-					padding-top: calc(<?php echo get_theme_mod( 'carousel_height_setting', '25' ).'%' ?> + 5%) !important;
-				}
-			}
-
-			/* Medium devices (tablets, 768px and up) */
-			@media (min-width: 768px) {
-				/* 3.3:- Responsive Breakpoints */
-				.carousel-image {
-					padding-top: <?php echo get_theme_mod( 'carousel_height_setting', '25' ).'%' ?> !important;
-				}
 			}
 		</style>
 		<?php
