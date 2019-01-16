@@ -1,7 +1,7 @@
 <?php
-    $realSite = '';
-    $realSiteURL = '';
-    $designerName = '';
+    $realSite = 'Clive\'s Chemist';
+    $realSiteURL = 'https://www.clives.co.nz';
+    $designerName = 'Quentin McCarthy';
 
 function acknowledgement_styles_custom(){
     ?>
