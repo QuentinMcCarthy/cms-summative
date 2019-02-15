@@ -1,5 +1,6 @@
 <?php
-    $realSite = "Clive's Chemist";
+    $realSite = 'Clive\'s Chemist';
+    $realSiteURL = 'https://www.clives.co.nz/';
     $designerName = 'Quentin McCarthy';
 
 function acknowledgement_styles_custom(){
@@ -67,8 +68,8 @@ function acknowledgement_script_custom(){
             <hr>
             <p>This site is for education use only and is <strong>not</strong> the real site for <?= $GLOBALS['realSite']; ?>.</p>
             <p>This is created for a school project at Yoobee School of Design by <?= $GLOBALS['designerName']; ?> and has no affiliation with real <?= $GLOBALS['realSite']; ?>.</p>
-            <a href="https://www.clives.co.nz/" target="blank">Click here to see the real site.</a><br>
-            <p>Check the button below to confirm you understand.</p>
+            <a href="<?= $realSiteURL; ?>" target="blank">Click here to see the real site.</a><br>
+            <p>Check the button bellow to confirm you understand.</p>
             <div>
                 <input type="checkbox" id="acknowledgeCheckBox" onclick="checkedInput();"> <label for="">I understand that this website is not the real <?= $realSite; ?> website</label>
             </div>

@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col">
 				<div class="row">
-					<?php get_template_part( 'sidebar-left' ); ?>
+					<?php get_template_part( 'template-sidebar-left', 'Left Sidebar' ); ?>
 
 					<div class="col">
 						<?php if ( have_posts() ): ?>
@@ -27,7 +27,7 @@
 						<?php endif; ?>
 					</div>
 
-					<?php get_template_part( 'sidebar-right' ); ?>
+					<?php get_template_part( 'template-sidebar-right', 'Right Sidebar' ); ?>
 				</div>
 			</div>
 		</div>
