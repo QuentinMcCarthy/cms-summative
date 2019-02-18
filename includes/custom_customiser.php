@@ -49,7 +49,7 @@
 
 		// 2.1:- Header Background
 		$header_bg_color_setting_args = array(
-			'default'   => '#343a40',
+			'default'   => '#00b6f0',
 			'transport' => 'refresh',
 		);
 
