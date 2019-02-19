@@ -7,7 +7,20 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-		<?php if ( has_nav_menu( 'topnav' ) ): ?>
+		<?php
+			// Only allow one nav to be active at a time. Top nav overrides middle nav.
+
+			$topnav = false;
+			$middlenav = false;
+
+			if ( has_nav_menu( 'topnav' ) ) {
+				$topnav = true;
+			} elseif ( has_nav_menu( 'middlenav' ) ) {
+				$middlenav = true;
+			}
+		?>
+
+		<?php if ( $topnav ): ?>
 			<nav class="navbar navbar-expand-lg navbar-dark header-bg">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#default-nav-container" aria-controls="default-nav-container" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -27,7 +40,7 @@
 			</nav>
 		<?php endif; ?>
 
-		<?php if ( has_nav_menu( 'middlenav' ) ): ?>
+		<?php if ( $middlenav ): ?>
 			<nav class="navbar navbar-expand-lg navbar-dark header-bg">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#default-nav-container" aria-controls="default-nav-container" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
