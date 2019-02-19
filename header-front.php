@@ -40,13 +40,7 @@
 			</nav>
 		<?php endif; ?>
 
-		<div class="row mx-0">
-			<div class="col px-0">
-				<?php if ( have_posts() ): ?>
-					<?php get_template_part( 'template-carousel', 'Carousel' ); ?>
-				<?php endif; ?>
-			</div>
-		</div>
+		<?php get_template_part( 'template-carousel', 'Carousel' ); ?>
 
 		<?php if ( $middlenav ): ?>
 			<nav class="navbar navbar-expand-lg navbar-dark header-bg">
