@@ -232,7 +232,7 @@
 
 			/* 2.4:- Header Styles */
 			.header-bg {
-				background-color: <?php echo get_theme_mod( 'header_bg_color_setting', '#343a40' ); ?> !important;
+				background-color: <?php echo get_theme_mod( 'header_bg_color_setting', '#00b6f0' ); ?> !important;
 			}
 
 			.navbar-dark .navbar-nav .nav-link {
