@@ -264,8 +264,7 @@
 
 
 			/* 4.3:- Sidebar Styles */
-			#sidebar-left,
-			#sidebar-right {
+			#sidebar {
 				background-color: <?php echo get_theme_mod( 'sidebar_bg_color_setting', '#afafaf' ); ?> !important;
 				color: <?php echo get_theme_mod( 'sidebar_text_color_setting', '#000000' ); ?> !important;
 			}
