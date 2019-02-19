@@ -1,19 +1,98 @@
 <?php
 	/* Table of Contents:
-		1.0:- Includes
-		2.0:- Stylesheets and Scripts
-		3.0:- Init
-			3.1:- Menus
-			3.2:- Custom Post Types
-				3.2.1:- Carousel Images
-			3.3:- Custom Background
-			3.4:- Post Thumbnails
-			3.5:- Post Formats
-		4.0:- Widget Menus
+		1.0:- Theme Setup
+		2.0:- Includes
+		3.0:- Stylesheets and Scripts
+		4.0:- Init
+			4.1:- Menus
+			4.2:- Custom Post Types
+				4.2.1:- Carousel Images
+			4.3:- Custom Background
+			4.4:- Post Thumbnails
+			4.5:- Post Formats
+		5.0:- Widget Menus
 	*/
 
 
-	// 1.0:- Includes
+	// 1.0:- Theme Setup
+	add_action( 'after_setup_theme', function() {
+		// Define and register starter content to showcase the theme on new sites.
+		$starter_content = array(
+			'widgets'     => array(
+				'sidebar' => array(
+					'search',
+					'tag_cloud',
+					'categories',
+					'meta',
+				),
+			),
+
+			'posts'              => array(
+				'home',
+				'about',
+				'blog',
+				'contact',
+				'carousel-1'     => array(
+					'post_title' => 'carousel-1',
+					'post_type'  => 'carousel',
+					'thumbnail'  => '{{carousel-1}}',
+				),
+				'carousel-2'     => array(
+					'post-title' => 'carousel-2',
+					'post_type'  => 'carousel',
+					'thumbnail'  => '{{carousel-2}}',
+				),
+				'carousel-3'     => array(
+					'post-title' => 'carousel-3',
+					'post_type'  => 'carousel',
+					'thumbnail'  => '{{carousel-3}}',
+				),
+			),
+
+			'attachments'        => array(
+				'carousel-1'     => array(
+					'post-title' => _x( 'Dock', 'Theme Starter Content', 'cliveschemist' ),
+					'file'       => 'assets/img/default-carousel-1.jpeg',
+				),
+				'carousel-2'     => array(
+					'post-title' => _x( 'Darkened Buildings', 'Theme Starter Content', 'cliveschemist' ),
+					'file'       => 'assets/img/default-carousel-2.jpeg',
+				),
+				'carousel-3'     => array(
+					'post-title' => _x( 'Waves on rocks', 'Theme Starter Content', 'cliveschemist' ),
+					'file'       => 'assets/img/default-carousel-3.jpeg',
+				),
+			),
+
+			// Default to a static front page and assign the front and posts pages.
+			'options'     => array(
+				'show_on_front'  => 'page',
+				'page_on_front'  => '{{home}}',
+				'page_for_posts' => '{{blog}}',
+			),
+
+			// Set up nav menus for each of the two areas registered in the theme.
+			'nav_menus'   => array(
+				// Assign a menu to the "top" location.
+				'topnav'    => array(
+					'name'  => __( 'Navigation', 'cliveschemist' ),
+					'items' => array(
+						'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
+						'page_about',
+						'page_blog',
+						'page_contact',
+					),
+				),
+			),
+		);
+
+		$starter_content = apply_filters( 'cliveschemist_starter_content', $starter_content );
+
+		add_theme_support( 'starter-content', $starter_content );
+	});
+
+
+	// 2.0:- Includes
 	require_once get_template_directory().'/includes/class-wp-bootstrap-navwalker.php';
 
 	require get_parent_theme_file_path( './includes/custom_customiser.php' );
@@ -21,7 +100,7 @@
 	require get_parent_theme_file_path( './includes/educational_alert.php' );
 
 
-	// 2.0:- Stylesheets and Scripts
+	// 3.0:- Stylesheets and Scripts
 	add_action( 'wp_enqueue_scripts', function() {
 		$css_directory = get_template_directory_uri().'/assets/css/';
 		$js_directory = get_template_directory_uri().'/assets/js/';
@@ -37,15 +116,15 @@
 	});
 
 
-	// 3.0:- Init
+	// 4.0:- Init
 	function custom_theme_init() {
-		// 3.1:- Menus
+		// 4.1:- Menus
 		register_nav_menu( 'topnav', __( 'Navbar above Carousel, overrides Navbar below Carousel' ) );
 		register_nav_menu( 'middlenav', __( 'Navbar below Carousel' ) );
 
-		// 3.2:- Custom Post Types
+		// 4.2:- Custom Post Types
 
-		// 3.2.1:- Carousel Images
+		// 4.2.1:- Carousel Images
 		$carousel_images_labels = array(
 			'name'               => _x( 'Carousel', 'Post type name', '18wdwu02theme' ),
 			'singular_name'      => _x( 'Carousel Image', 'Post type singular name', '18wdwu02theme' ),
@@ -83,7 +162,7 @@
 		register_post_type( 'carousel', $carousel_images_args );
 
 
-		// 3.3:- Custom Background
+		// 4.3:- Custom Background
 		$background_args = array(
 			'default-color'          => 'ffffff',
 			'default-image'          => '',
@@ -97,11 +176,11 @@
 		add_theme_support( 'custom-background', $background_args );
 
 
-		// 3.4:- Post Thumbnails
+		// 4.4:- Post Thumbnails
 		add_theme_support( 'post-thumbnails' );
 
 
-		// 3.5:- Post Formats
+		// 4.5:- Post Formats
 		$post_formats = array(
 			'aside',
 			'gallery',
@@ -115,7 +194,7 @@
 	add_action( 'init', 'custom_theme_init' );
 
 
-	// 4.0:- Widget Menus
+	// 5.0:- Widget Menus
 	add_action( 'widgets_init', function() {
 		register_sidebar(array(
 			'id'            => 'sidebar',
