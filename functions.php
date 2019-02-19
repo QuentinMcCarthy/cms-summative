@@ -15,81 +15,79 @@
 
 
 	// 1.0:- Theme Setup
-	add_action( 'after_setup_theme', function() {
-		// Define and register starter content to showcase the theme on new sites.
-		$starter_content = array(
-			'widgets'     => array(
-				'sidebar' => array(
-					'search',
-					'tag_cloud',
-					'categories',
-					'meta',
-				),
-			),
-
-			'posts'              => array(
-				'home',
-				'about',
-				'blog',
-				'contact',
-				'carousel-1'     => array(
-					'post_title' => 'carousel-1',
-					'post_type'  => 'carousel',
-					'thumbnail'  => '{{carousel-1}}',
-				),
-				'carousel-2'     => array(
-					'post-title' => 'carousel-2',
-					'post_type'  => 'carousel',
-					'thumbnail'  => '{{carousel-2}}',
-				),
-				'carousel-3'     => array(
-					'post-title' => 'carousel-3',
-					'post_type'  => 'carousel',
-					'thumbnail'  => '{{carousel-3}}',
-				),
-			),
-
-			'attachments'        => array(
-				'carousel-1'     => array(
-					'post-title' => _x( 'Dock', 'Theme Starter Content', 'cliveschemist' ),
-					'file'       => 'assets/img/default-carousel-1.jpeg',
-				),
-				'carousel-2'     => array(
-					'post-title' => _x( 'Darkened Buildings', 'Theme Starter Content', 'cliveschemist' ),
-					'file'       => 'assets/img/default-carousel-2.jpeg',
-				),
-				'carousel-3'     => array(
-					'post-title' => _x( 'Waves on rocks', 'Theme Starter Content', 'cliveschemist' ),
-					'file'       => 'assets/img/default-carousel-3.jpeg',
-				),
-			),
-
-			// Default to a static front page and assign the front and posts pages.
-			'options'     => array(
-				'show_on_front'  => 'page',
-				'page_on_front'  => '{{home}}',
-				'page_for_posts' => '{{blog}}',
-			),
-
-			// Set up nav menus for each of the two areas registered in the theme.
-			'nav_menus'   => array(
-				// Assign a menu to the "top" location.
-				'topnav'    => array(
-					'name'  => __( 'Navigation', 'cliveschemist' ),
-					'items' => array(
-						'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
-						'page_about',
-						'page_blog',
-						'page_contact',
-					),
-				),
-			),
-		);
-
-		$starter_content = apply_filters( 'cliveschemist_starter_content', $starter_content );
-
-		add_theme_support( 'starter-content', $starter_content );
-	});
+	// function theme_setup() {
+	// 	// Define and register starter content to showcase the theme on new sites.
+	// 	$starter_content = array(
+	// 		'widgets'     => array(
+	// 			'sidebar' => array(
+	// 				'search',
+	// 				'categories',
+	// 				'meta',
+	// 			),
+	// 		),
+	//
+	// 		'posts'              => array(
+	// 			'home',
+	// 			'about',
+	// 			'blog',
+	// 			'contact',
+	// 			'carousel-1'     => array(
+	// 				'post_title' => 'carousel-1',
+	// 				'post_type'  => 'carousel',
+	// 				'thumbnail'  => '{{carousel-1}}',
+	// 			),
+	// 			'carousel-2'     => array(
+	// 				'post-title' => 'carousel-2',
+	// 				'post_type'  => 'carousel',
+	// 				'thumbnail'  => '{{carousel-2}}',
+	// 			),
+	// 			'carousel-3'     => array(
+	// 				'post-title' => 'carousel-3',
+	// 				'post_type'  => 'carousel',
+	// 				'thumbnail'  => '{{carousel-3}}',
+	// 			),
+	// 		),
+	//
+	// 		'attachments'        => array(
+	// 			'carousel-1'     => array(
+	// 				'post-title' => _x( 'Dock', 'Theme Starter Content', 'cliveschemist' ),
+	// 				'file'       => 'assets/img/default-carousel-1.jpeg',
+	// 			),
+	// 			'carousel-2'     => array(
+	// 				'post-title' => _x( 'Darkened Buildings', 'Theme Starter Content', 'cliveschemist' ),
+	// 				'file'       => 'assets/img/default-carousel-2.jpeg',
+	// 			),
+	// 			'carousel-3'     => array(
+	// 				'post-title' => _x( 'Waves on rocks', 'Theme Starter Content', 'cliveschemist' ),
+	// 				'file'       => 'assets/img/default-carousel-3.jpeg',
+	// 			),
+	// 		),
+	//
+	// 		'options'     => array(
+	// 			'show_on_front'  => 'page',
+	// 			'page_on_front'  => '{{home}}',
+	// 			'page_for_posts' => '{{blog}}',
+	// 		),
+	//
+	// 		'nav_menus'   => array(
+	// 			'topnav'    => array(
+	// 				'name'  => __( 'Navigation', 'cliveschemist' ),
+	// 				'items' => array(
+	// 					'link_home',
+	// 					'page_about',
+	// 					'page_blog',
+	// 					'page_contact',
+	// 				),
+	// 			),
+	// 		),
+	// 	);
+	//
+	// 	$starter_content = apply_filters( 'cliveschemist_starter_content', $starter_content );
+	//
+	// 	add_theme_support( 'starter-content', $starter_content );
+	// }
+	//
+	// add_action( 'after_setup_theme', theme_setup());
 
 
 	// 2.0:- Includes
