@@ -10,7 +10,8 @@
 			2.4:- Header Styles
 		3.0:- Carousel
 			3.1:- Carousel Height
-			3.2:- Carousel Styles
+			3.2:- Carousel Image Size
+			3.3:- Carousel Styles
 		4.0:- Sidebar
 			4.1:- Sidebar Background
 			4.2:- Sidebar Text
@@ -140,6 +141,32 @@
 		$wp_customize->add_control( $carousel_height_control );
 
 
+		// 3.2:- Carousel Image Size
+		$carousel_imagesize_setting_args = array(
+			'default'   => 'contain',
+			'transport' => 'refresh',
+		);
+
+		$wp_customize->add_setting( 'carousel_imagesize_setting', $carousel_imagesize_setting_args );
+
+		$carousel_imagesize_input_choices = array(
+			'cover'   => 'Cover',
+			'contain' => 'Contain',
+		);
+
+		$carousel_imagesize_control_args = array(
+			'label'    => __( 'Carousel Image Size', 'cliveschemist' ),
+			'section'  => 'custom_carousel',
+			'settings' => 'carousel_imagesize_setting',
+			'type'     => 'select',
+			'choices'  => $carousel_imagesize_input_choices,
+		);
+
+		$carousel_imagesize_control = new WP_Customize_Control( $wp_customize, 'carousel_imagesize_control', $carousel_imagesize_control_args );
+
+		$wp_customize->add_control( $carousel_imagesize_control );
+
+
 		// 4.0:- Sidebar
 
 		// 4.1:- Sidebar Background
@@ -253,13 +280,13 @@
 			}
 
 
-			/* 3.2:- Carousel Styles */
+			/* 3.3:- Carousel Styles */
 			.carousel-image {
 				padding-top: <?php echo get_theme_mod( 'carousel_height_setting', '30' ).'%'; ?> !important;
 				width: 100%;
 				background-repeat: no-repeat;
 				background-position: center;
-				background-size: contain;
+				background-size: <?php echo get_theme_mod( 'carousel_imagesize_setting', 'contain' ) ?> !important;
 			}
 
 
