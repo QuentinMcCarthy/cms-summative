@@ -48,17 +48,17 @@
 
 		// 3.2.1:- Carousel Images
 		$carousel_images_labels = array(
-			'name'               => _x( 'Carousel', 'Post type name', '18wdwu02theme' ),
-			'singular_name'      => _x( 'Carousel Image', 'Post type singular name', '18wdwu02theme' ),
-			'add_new_item'       => _x( 'Add New Image', 'Adding new carousel image', '18wdwu02theme' ),
-			'edit_item'          => _x( 'Edit Carousel Image', 'Editing carousel image', '18wdwu02theme' ),
-			'new_item'           => _x( 'New Carousel Image', 'New carousel image', '18wdwu02theme' ),
-			'view_item'          => _x( 'View Carousel Image', 'Viewing carousel image', '18wdwu02theme' ),
-			'view_items'         => _x( 'View Carousel Images', 'Viewing carousel images', '18wdwu02theme' ),
-			'search_items'       => _x( 'Search Carousel Images', 'Searching carousel images', '18wdwu02theme' ),
-			'not_found'          => _x( 'No Carousel Images found', 'No carousel images found', '18wdwu02theme' ),
-			'not_found_in_trash' => _x( 'No Carousel Images found in Trash', 'No Carousel Images found in Trash', '18wdwu02theme' ),
-			'all_items'          => _x( 'All Carousel Images', 'All carousel images', '18wdwu02theme' ),
+			'name'               => _x( 'Carousel Images', 'Post type name', 'cliveschemist' ),
+			'singular_name'      => _x( 'Carousel Image', 'Post type singular name', 'cliveschemist' ),
+			'add_new_item'       => _x( 'Add New Image', 'Adding new carousel image', 'cliveschemist' ),
+			'edit_item'          => _x( 'Edit Carousel Image', 'Editing carousel image', 'cliveschemist' ),
+			'new_item'           => _x( 'New Carousel Image', 'New carousel image', 'cliveschemist' ),
+			'view_item'          => _x( 'View Carousel Image', 'Viewing carousel image', 'cliveschemist' ),
+			'view_items'         => _x( 'View Carousel Images', 'Viewing carousel images', 'cliveschemist' ),
+			'search_items'       => _x( 'Search Carousel Images', 'Searching carousel images', 'cliveschemist' ),
+			'not_found'          => _x( 'No Carousel Images found', 'No carousel images found', 'cliveschemist' ),
+			'not_found_in_trash' => _x( 'No Carousel Images found in Trash', 'No Carousel Images found in Trash', 'cliveschemist' ),
+			'all_items'          => _x( 'All Carousel Images', 'All carousel images', 'cliveschemist' ),
 		);
 
 		$carousel_images_supports = array(
@@ -70,13 +70,13 @@
 			'labels'              => $carousel_images_labels,
 			'description'         => 'Carousel images for the front-page carousel',
 			'public'              => true,
-			'hierarchical'        => true,
 			'exclude_from_search' => true,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
 			'show_in_nav_menus'   => false,
+			'show_in_menu'        => true,
 			'menu_position'       => 25,
 			'menu_icon'           => 'dashicons-images-alt2',
+			'hierarchical'        => true,
 			'supports'            => $carousel_images_supports,
 			'query_var'           => true,
 		);
