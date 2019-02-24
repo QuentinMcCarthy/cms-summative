@@ -115,7 +115,7 @@
 
 		// 3.1:- Carousel Height
 		$carousel_height_setting_args = array(
-			'default'   => '25',
+			'default'   => '30',
 			'transport' => 'refresh',
 		);
 
@@ -255,7 +255,7 @@
 
 			/* 3.2:- Carousel Styles */
 			.carousel-image {
-				padding-top: <?php echo get_theme_mod( 'carousel_height_setting', '25' ).'%'; ?> !important;
+				padding-top: <?php echo get_theme_mod( 'carousel_height_setting', '30' ).'%'; ?> !important;
 				width: 100%;
 				background-repeat: no-repeat;
 				background-position: center;
