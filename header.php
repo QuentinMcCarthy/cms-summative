@@ -22,8 +22,11 @@
 
 		<?php if ( $topnav ): ?>
 			<nav class="navbar navbar-expand-lg navbar-dark header-bg">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-nav-container" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 				<a class="navbar-brand" href="<?php echo esc_url( get_home_url() ); ?>"><div class="navbar-brand-image"></div></a>
-				<div id="top-nav-container" class="collape navbar-collapse">
+				<div id="top-nav-container" class="collapse navbar-collapse">
 					<?php
 						wp_nav_menu(array(
 							'theme_location'  => 'topnav',
@@ -42,8 +45,11 @@
 
 		<?php if ( $middlenav ): ?>
 			<nav class="navbar navbar-expand-lg navbar-dark header-bg">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#middle-nav-container" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 				<a class="navbar-brand" href="<?php echo esc_url( get_home_url() ); ?>"><div class="navbar-brand-image"></div></a>
-				<div id="middle-nav-container" class="collape navbar-collapse">
+				<div id="middle-nav-container" class="collapse navbar-collapse">
 					<?php
 						wp_nav_menu(array(
 							'theme_location'  => 'middlenav',
