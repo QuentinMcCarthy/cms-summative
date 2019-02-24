@@ -1,11 +1,11 @@
 <?php
 	/* Table of Contents:
 		1.0:- Globals
-			1.1:- Link Text
+			1.1:- Link Text Color
 			1.2:- Globals Styles
 		2.0:- Header
-			2.1:- Header Background
-			2.2:- Header Text
+			2.1:- Header Background Color
+			2.2:- Header Text Color
 			2.3:- Header Logo
 			2.4:- Header Styles
 		3.0:- Carousel
@@ -13,12 +13,12 @@
 			3.2:- Carousel Image Size
 			3.3:- Carousel Styles
 		4.0:- Sidebar
-			4.1:- Sidebar Background
-			4.2:- Sidebar Text
+			4.1:- Sidebar Background Color
+			4.2:- Sidebar Text Color
 			4.3:- Sidebar Styles
 		5.0:- Footer
-			5.1:- Footer Background
-			5.2:- Footer Text
+			5.1:- Footer Background Color
+			5.2:- Footer Text Color
 			5.3:- Footer Styles
 	*/
 
@@ -28,7 +28,7 @@
 
 		// 1.0:- Globals
 
-		// 1.1:- Link Text
+		// 1.1:- Link Text Color
 		$link_text_color_setting_args = array(
 			'default'   => '#007bff',
 			'transport' => 'refresh',
@@ -48,7 +48,7 @@
 
 		// 2.0:- Header
 
-		// 2.1:- Header Background
+		// 2.1:- Header Background Color
 		$header_bg_color_setting_args = array(
 			'default'   => '#00b6f0',
 			'transport' => 'refresh',
@@ -67,7 +67,7 @@
 		$wp_customize->add_control( $header_bg_color_control );
 
 
-		// 2.2:- Header Text
+		// 2.2:- Header Text Color
 		$header_text_color_setting_args = array(
 			'default'   => '#ffffff',
 			'transport' => 'refresh',
@@ -107,8 +107,9 @@
 
 		// 3.0:- Carousel
 		$carousel_section_args = array(
-			'title'    => __( 'Carousel', 'cliveschemist' ),
-			'priority' => 20,
+			'title'       => __( 'Carousel', 'cliveschemist' ),
+			'description' => 'Customisation options for the carousel, which only appears on the front page.',
+			'priority'    => 20,
 		);
 
 		$wp_customize->add_section( 'custom_carousel', $carousel_section_args );
@@ -130,6 +131,7 @@
 
 		$carousel_height_control_args = array(
 			'label'       => __( 'Carousel Height', 'cliveschemist' ),
+			'description' => 'The carousel\'s height is a percentage of the browser window\'s height.',
 			'section'     => 'custom_carousel',
 			'settings'    => 'carousel_height_setting',
 			'type'        => 'number',
@@ -155,11 +157,12 @@
 		);
 
 		$carousel_imagesize_control_args = array(
-			'label'    => __( 'Carousel Image Size', 'cliveschemist' ),
-			'section'  => 'custom_carousel',
-			'settings' => 'carousel_imagesize_setting',
-			'type'     => 'select',
-			'choices'  => $carousel_imagesize_input_choices,
+			'label'       => __( 'Carousel Image Size', 'cliveschemist' ),
+			'description' => 'The image size is how the images fit into the carousel.<br /><br />\'Contain\' has the images fit entirely into the carousel, but can leave some white space as a result, while \'Cover\' will resize images to fit into the Carousel.<br /><br /><b>Be aware</b> when using the Cover option, as it will resize the image to fit the carousel, and if the image is too small it may become blurry/pixellated. If the image is taller than it is wide, or vice versa, then some of the image will not be visible.',
+			'section'     => 'custom_carousel',
+			'settings'    => 'carousel_imagesize_setting',
+			'type'        => 'select',
+			'choices'     => $carousel_imagesize_input_choices,
 		);
 
 		$carousel_imagesize_control = new WP_Customize_Control( $wp_customize, 'carousel_imagesize_control', $carousel_imagesize_control_args );
@@ -169,7 +172,7 @@
 
 		// 4.0:- Sidebar
 
-		// 4.1:- Sidebar Background
+		// 4.1:- Sidebar Background Color
 		$sidebar_bg_color_setting_args = array(
 			'default'   => '#afafaf',
 			'transport' => 'refresh',
@@ -188,7 +191,7 @@
 		$wp_customize->add_control( $sidebar_bg_color_control );
 
 
-		// 4.2:- Sidebar Text
+		// 4.2:- Sidebar Text Color
 		$sidebar_text_color_setting_args = array(
 			'default'   => '#000000',
 			'transport' => 'refresh',
@@ -209,7 +212,7 @@
 
 		// 5.0:- Footer
 
-		// 5.1:- Footer Background
+		// 5.1:- Footer Background Color
 		$footer_bg_color_setting_args = array(
 			'default'   => '#ffffff',
 			'transport' => 'refresh',
@@ -228,7 +231,7 @@
 		$wp_customize->add_control( $footer_bg_color_control );
 
 
-		// 5.2:- Footer Text
+		// 5.2:- Footer Text Color
 		$footer_text_color_setting_args = array(
 			'default'   => '#000000',
 			'transport' => 'refresh',
