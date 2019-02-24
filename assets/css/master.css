@@ -71,13 +71,12 @@ body > [class*="container"] {
 }
 
 .footer-widget:not(:last-child) {
-	width: fit-content;
 	border-right: 0.5px solid #000000;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-	background-color: #555555;
+	background-color: #000000;
 }
 
 
