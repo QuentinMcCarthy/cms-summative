@@ -21,7 +21,7 @@
 		?>
 
 		<?php if ( $topnav ): ?>
-			<nav class="navbar navbar-expand-lg navbar-dark header-bg">
+			<nav class="navbar navbar-expand-md navbar-dark header-bg">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-nav-container" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -46,7 +46,7 @@
 		<?php get_template_part( 'template-carousel', 'Carousel' ); ?>
 
 		<?php if ( $middlenav ): ?>
-			<nav class="navbar navbar-expand-lg navbar-dark header-bg">
+			<nav class="navbar navbar-expand-md navbar-dark header-bg">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#middle-nav-container" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
