@@ -174,7 +174,7 @@
 
 		// 4.1:- Sidebar Background Color
 		$sidebar_bg_color_setting_args = array(
-			'default'   => '#afafaf',
+			'default'   => '#ffffff',
 			'transport' => 'refresh',
 		);
 
@@ -295,7 +295,7 @@
 
 			/* 4.3:- Sidebar Styles */
 			#sidebar {
-				background-color: <?php echo get_theme_mod( 'sidebar_bg_color_setting', '#afafaf' ); ?> !important;
+				background-color: <?php echo get_theme_mod( 'sidebar_bg_color_setting', '#ffffff' ); ?> !important;
 				color: <?php echo get_theme_mod( 'sidebar_text_color_setting', '#000000' ); ?> !important;
 			}
 
