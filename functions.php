@@ -1,7 +1,8 @@
 <?php
 	/* Table of Contents:
-		1.0:- Includes
-		2.0:- Stylesheets and Scripts
+		1.0:- Theme Setup
+		2.0:- Includes
+		3.0:- Stylesheets and Scripts
 		3.0:- Init
 			3.1:- Menus
 			3.2:- Custom Post Types
@@ -9,7 +10,7 @@
 			3.3:- Custom Background
 			3.4:- Post Thumbnails
 			3.5:- Post Formats
-		4.0:- Widget Menus
+		5.0:- Widget Menus
 	*/
 
 
@@ -40,24 +41,24 @@
 	// 3.0:- Init
 	function custom_theme_init() {
 		// 3.1:- Menus
-		register_nav_menu( 'topnav', __( 'Navbar above Carousel' ) );
+		register_nav_menu( 'topnav', __( 'Navbar above Carousel, overrides Navbar below Carousel' ) );
 		register_nav_menu( 'middlenav', __( 'Navbar below Carousel' ) );
 
 		// 3.2:- Custom Post Types
 
 		// 3.2.1:- Carousel Images
 		$carousel_images_labels = array(
-			'name'               => _x( 'Carousel', 'Post type name', '18wdwu02theme' ),
-			'singular_name'      => _x( 'Carousel Image', 'Post type singular name', '18wdwu02theme' ),
-			'add_new_item'       => _x( 'Add New Image', 'Adding new carousel image', '18wdwu02theme' ),
-			'edit_item'          => _x( 'Edit Carousel Image', 'Editing carousel image', '18wdwu02theme' ),
-			'new_item'           => _x( 'New Carousel Image', 'New carousel image', '18wdwu02theme' ),
-			'view_item'          => _x( 'View Carousel Image', 'Viewing carousel image', '18wdwu02theme' ),
-			'view_items'         => _x( 'View Carousel Images', 'Viewing carousel images', '18wdwu02theme' ),
-			'search_items'       => _x( 'Search Carousel Images', 'Searching carousel images', '18wdwu02theme' ),
-			'not_found'          => _x( 'No Carousel Images found', 'No carousel images found', '18wdwu02theme' ),
-			'not_found_in_trash' => _x( 'No Carousel Images found in Trash', 'No Carousel Images found in Trash', '18wdwu02theme' ),
-			'all_items'          => _x( 'All Carousel Images', 'All carousel images', '18wdwu02theme' ),
+			'name'               => _x( 'Carousel Images', 'Post type name', 'cliveschemist' ),
+			'singular_name'      => _x( 'Carousel Image', 'Post type singular name', 'cliveschemist' ),
+			'add_new_item'       => _x( 'Add New Image', 'Adding new carousel image', 'cliveschemist' ),
+			'edit_item'          => _x( 'Edit Carousel Image', 'Editing carousel image', 'cliveschemist' ),
+			'new_item'           => _x( 'New Carousel Image', 'New carousel image', 'cliveschemist' ),
+			'view_item'          => _x( 'View Carousel Image', 'Viewing carousel image', 'cliveschemist' ),
+			'view_items'         => _x( 'View Carousel Images', 'Viewing carousel images', 'cliveschemist' ),
+			'search_items'       => _x( 'Search Carousel Images', 'Searching carousel images', 'cliveschemist' ),
+			'not_found'          => _x( 'No Carousel Images found', 'No carousel images found', 'cliveschemist' ),
+			'not_found_in_trash' => _x( 'No Carousel Images found in Trash', 'No Carousel Images found in Trash', 'cliveschemist' ),
+			'all_items'          => _x( 'All Carousel Images', 'All carousel images', 'cliveschemist' ),
 		);
 
 		$carousel_images_supports = array(
@@ -69,13 +70,13 @@
 			'labels'              => $carousel_images_labels,
 			'description'         => 'Carousel images for the front-page carousel',
 			'public'              => true,
-			'hierarchical'        => true,
 			'exclude_from_search' => true,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
 			'show_in_nav_menus'   => false,
+			'show_in_menu'        => true,
 			'menu_position'       => 25,
 			'menu_icon'           => 'dashicons-images-alt2',
+			'hierarchical'        => true,
 			'supports'            => $carousel_images_supports,
 			'query_var'           => true,
 		);
@@ -118,19 +119,9 @@
 	// 4.0:- Widget Menus
 	add_action( 'widgets_init', function() {
 		register_sidebar(array(
-			'id'            => 'sidebar-left',
-			'name'          => __( 'Left Sidebar', 'theme-slug' ),
-			'description'   => __( 'Left sidebar appears on the left side of all pages', 'theme-slug' ),
-			'before_widget' => '<div id="%1$s" class="sidebar-widget p-2 border-bottom border-dark %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		));
-
-		register_sidebar(array(
-			'id'            => 'sidebar-right',
-			'name'          => __( 'Right Sidebar', 'theme-slug' ),
-			'description'   => __( 'Right sidebar appears on the right side of all pages', 'theme-slug' ),
+			'id'            => 'sidebar',
+			'name'          => __( 'Sidebar', 'theme-slug' ),
+			'description'   => __( 'Sidebar appears on the right side of all pages', 'theme-slug' ),
 			'before_widget' => '<div id="%1$s" class="sidebar-widget p-2 border-bottom border-dark  %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',

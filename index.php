@@ -5,7 +5,7 @@
 				<div class="row">
 					<?php get_template_part( 'template-sidebar-left', 'Left Sidebar' ); ?>
 
-					<div class="col">
+					<div class="col-12 col-md-7 col-lg-8 col-xl-9">
 						<?php if ( have_posts() ): ?>
 							<?php while ( have_posts() ): the_post(); ?>
 								<div class="row p-1 border-bottom border-dark">
@@ -24,7 +24,7 @@
 						<?php endif; ?>
 					</div>
 
-					<?php get_template_part( 'template-sidebar-right', 'Right Sidebar' ); ?>
+					<?php get_template_part( 'template-sidebar', 'Right Sidebar' ); ?>
 				</div>
 			</div>
 		</div>

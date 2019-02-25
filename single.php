@@ -27,7 +27,7 @@
 						<?php endif; ?>
 					</div>
 
-					<?php get_template_part( 'template-sidebar-right', 'Right Sidebar' ); ?>
+					<?php get_template_part( 'template-sidebar', 'Right Sidebar' ); ?>
 				</div>
 			</div>
 		</div>

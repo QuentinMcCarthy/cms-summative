@@ -3,6 +3,8 @@
 	2.0:- Global styles
 	3.0:- Navbar
 	4.0:- Carousel
+	5.0:- Responsive Breakpoints
+		5.1:- Bootstrap lg
 */
 
 /* 1.0:- Default Styles */
@@ -70,19 +72,29 @@ body > [class*="container"] {
 }
 
 .footer-widget:not(:last-child) {
-	width: fit-content;
 	border-right: 0.5px solid #000000;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-	background-color: #555555;
+	background-color: #000000;
+}
+
+/* Override Bootstrap removing inline below 576px */
+.form-inline .form-control {
+	display: inline-block;
+	width: auto;
+	vertical-align: middle;
 }
 
 
 /* 3:0:- Navbar */
 
 /* Styles relating to the navbar */
+
+.navbar .search-form {
+	display: none;
+}
 
 .navbar-brand {
 	width: 15%;
@@ -103,4 +115,14 @@ body > [class*="container"] {
 #main-carousel {
 	height: fit-content;
 	overflow: hidden;
+}
+
+
+/* 5.0:- Responsive Breakpoints */
+
+/* 5.1:- Bootstrap lg */
+@media (min-width: 992px) {
+	.navbar .search-form {
+		display: block;
+	}
 }
