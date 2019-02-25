@@ -3,7 +3,8 @@
 	2.0:- Global styles
 	3.0:- Navbar
 	4.0:- Carousel
-	5.0:- Sidebar
+	5.0:- Responsive Breakpoints
+		5.1:- Bootstrap lg
 */
 
 /* 1.0:- Default Styles */
@@ -84,6 +85,10 @@ body > [class*="container"] {
 
 /* Styles relating to the navbar */
 
+.navbar .search-form {
+	display: none;
+}
+
 .navbar-brand {
 	width: 15%;
 	height: 40px;
@@ -103,4 +108,14 @@ body > [class*="container"] {
 #main-carousel {
 	height: fit-content;
 	overflow: hidden;
+}
+
+
+/* 5.0:- Responsive Breakpoints */
+
+/* 5.1:- Bootstrap lg */
+@media (min-width: 992px) {
+	.navbar .search-form {
+		display: block;
+	}
 }
