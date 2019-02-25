@@ -80,6 +80,13 @@ body > [class*="container"] {
 	background-color: #000000;
 }
 
+/* Override Bootstrap removing inline below 576px */
+.form-inline .form-control {
+	display: inline-block;
+	width: auto;
+	vertical-align: middle;
+}
+
 
 /* 3:0:- Navbar */
 
